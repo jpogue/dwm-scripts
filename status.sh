@@ -9,7 +9,7 @@ while true; do
 	BATTPERC="$(apm | grep -A 3 'Battery 0:' | grep life | grep -o '[0-9]\+')"
 	DISK="[ $(df -h / | grep ROOT | grep -o '[0-9]\+%') ]"
 
-       # set all of our icons, this only works with statuscolors patch installed
+       # set all of our icons
 	if [ $BATTPERC -le 20 ]; then
 		BATTICON="$(echo -ne '\x04') $(echo -ne '\ue24a')$(echo -ne '\x01') "
 	else
