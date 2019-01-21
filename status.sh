@@ -1,4 +1,6 @@
 #!/usr/local/bin/bash
+#called by startdwm.sh
+#puts together a bunch of stuff and pushes it to the statusbar. Requires Siji font for icons and statuscolors for color
 
 while true; do
 
