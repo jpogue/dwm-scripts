@@ -16,16 +16,16 @@ while true; do
 		BATTICON="$(echo -ne '\ue24a')"
 	fi
 
-	DISKICON="$(echo -ne '\ue1e1')"
+	DISKICON="$(echo -ne '\ue147')"
 	CLOCKICON="$(echo -ne '\ue081')"
 	CALICON="$(echo -ne '\ue225')"
 	DWMICON="$(echo -ne '\ue241')"
 
    	# all the stuff we're gonna send to xsetroot
-	TIME="[ $CLOCKICON$(date +%I:%M\ %p) ]"
-	DATE="[ $CALICON$(date +%h\ %d) ]"
-	BATT="[ $BATTICON$(apm | grep -A 3 'Battery 0:' | grep life | grep -o '[0-9]\+%') ]"
-	DISK="[ $DISKICON$(df -h / | grep ROOT | grep -o '[0-9]\+%') ]"
+	TIME=" $CLOCKICON$(date +%I:%M\ %p) "
+	DATE=" $CALICON$(date +%h\ %d) "
+	BATT=" $BATTICON$(apm | grep -A 3 'Battery 0:' | grep life | grep -o '[0-9]\+%') "
+	DISK=" $DISKICON$(df -h / | grep ROOT | grep -o '[0-9]\+%') "
 
 	xsetroot -name "$DISK$BATT$DATE$TIME $DWMICON" 
 	sleep 10
