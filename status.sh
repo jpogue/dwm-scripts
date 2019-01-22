@@ -11,7 +11,7 @@ while true; do
 
        # set all of our icons
 	if [ $BATTPERC -le 20 ]; then
-		BATTICON="$(echo -ne '\x04') $(echo -ne '\ue24a')$(echo -ne '\x01') "
+		BATTICON="$(echo -ne '\x03')$(echo -ne '\ue24a')$(echo -ne '\x01') "
 	else
 		BATTICON="$(echo -ne '\ue24a')"
 	fi
@@ -27,6 +27,6 @@ while true; do
 	BATT=" $BATTICON$(apm | grep -A 3 'Battery 0:' | grep life | grep -o '[0-9]\+%') "
 	DISK=" $DISKICON$(df -h / | grep ROOT | grep -o '[0-9]\+%') "
 
-	xsetroot -name "$DISK$BATT$DATE$TIME $DWMICON" 
+	xsetroot -name "[$DISK$BATT$DATE$TIME]" 
 	sleep 10
 done

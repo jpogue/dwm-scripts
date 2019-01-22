@@ -3,7 +3,7 @@
 
 setxkbmap -layout us -variant mac &
 /home/jstn/.fehbg &
-compton &
+#compton &
 xbanish &
 /home/jstn/.fehbg &
 /home/jstn/.bin/status.sh &
