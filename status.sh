@@ -10,9 +10,6 @@ while true; do
 	DISK1="$(df -h /home | grep -o '[0-9]\+%' | sed s/%//g)"
 	DISK2="$(df -h / | grep ROOT | grep -o '[0-9]\+%' | sed s/%//g)"
 	DISKNUM=$((DISK1+DISK2))
-	echo $DISK1
-	echo $DISK2
-	echo $DISKNUM
 
        # set all of our icons
 	if [ $BATTPERC -le 20 ]; then
